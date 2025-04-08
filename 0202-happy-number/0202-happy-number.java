@@ -1,25 +1,19 @@
 class Solution {
     public boolean isHappy(int n) {
-        
-        HashSet<Integer> seen = new HashSet<>();
-
-        while (n != 1 && !seen.contains(n)) {
+        Set<Integer> seen=new HashSet<>();
+        while(n!=1 && !seen.contains(n)){
             seen.add(n);
-            n = calculateSquareSum(n);
+            n=squareSum(n);
         }
-
-        return n == 1;
+        return n==1;
     }
-        private static int calculateSquareSum(int number) {
-        int sum = 0;
-        while (number > 0) {
-            int digit = number % 10;
-            sum += digit * digit;
-            number /= 10;
+    public static int squareSum(int n){
+        int sum=0;
+        while(n>0){
+            int digit=n%10;
+            sum +=digit*digit;
+            n/=10;
         }
         return sum;
     }
-        
-        
-    
 }
