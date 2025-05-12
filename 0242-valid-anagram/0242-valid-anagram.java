@@ -1,15 +1,12 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
-        if(s.length()!=t.length()) return false;
-        Set<Character> seen=new HashSet<>();
-        for(char ch: s.toCharArray()){
-            seen.add(ch);
+        char[] ch=s.toCharArray();
+        char[] c=t.toCharArray();
+        Arrays.sort(ch);
+        Arrays.sort(c);
+        if(s.length()!=t.length()){
+            return false;
         }
-        for(char ch1:t.toCharArray()){
-            if(!seen.contains(ch1)){
-                return false;
-            }
-        }
-        return true;
+        return Arrays.equals(ch,c); 
     }
 }
