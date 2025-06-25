@@ -1,17 +1,17 @@
 class Solution {
     public int addedInteger(int[] nums1, int[] nums2) {
-        Arrays.sort(nums1); 
-        Arrays.sort(nums2);
-        Set<Integer> set=new HashSet<>();
+        int min1=nums1[0];
+        int min2=nums2[0];
         for(int i=0;i<nums1.length;i++){
-            int x=nums2[i]-nums1[i];
-            set.add(x);
-        }
-        if(set.size()==1){
-            for(int num:set){
-                return num;
+            if(nums1[i]<min1){
+                min1=nums1[i];
             }
         }
-        return 0;
+        for(int i=0;i<nums2.length;i++){
+            if(nums2[i]<min2){
+                min2=nums2[i];
+            }
+        }
+        return min2-min1;
     }
 }
