@@ -1,11 +1,12 @@
 class Solution {
     public boolean isHappy(int n) {
-        Set<Integer> seen=new HashSet<>();
-        while(n!=1 && !seen.contains(n)){
-            seen.add(n);
-            n=squareSum(n);
-        }
-        return n==1;
+        int slow=n,fast=n;
+        do{
+            slow=squareSum(slow);
+            fast=squareSum(squareSum(fast));
+        }while(slow!=fast);
+            if(slow==1) return true;
+            else return false;
     }
     public static int squareSum(int n){
         int sum=0;
