@@ -1,6 +1,6 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> result=new ArrayList<List<Integer>>();
+      List<List<Integer>> result=new ArrayList<List<Integer>>();
         List<Integer> row,preRow=null;
         for(int i=0; i<numRows; i++){
             row=new ArrayList<>();
@@ -15,6 +15,6 @@ class Solution {
             preRow=row;
             result.add(row);
         }
-        return result;
+        return result;  
     }
 }
