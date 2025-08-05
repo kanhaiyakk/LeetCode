@@ -12,7 +12,7 @@ class Solution {
                 }
             }
             else{
-                if(map.containsValue(ch)){
+                if(map.containsValue(word)){
                     return false;
                 }else{
                     map.put(ch,word);
