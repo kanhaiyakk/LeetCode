@@ -1,6 +1,6 @@
 class Solution {
     public int numOfUnplacedFruits(int[] fruits, int[] baskets) {
-       int n = fruits.length;
+        int n = fruits.length;
         boolean[] used = new boolean[n];
         int unplaced = 0;
         for (int fruit : fruits) {
@@ -14,6 +14,6 @@ class Solution {
             }
             if (!placed) unplaced++;
         }
-        return unplaced; 
+        return unplaced;  
     }
 }
