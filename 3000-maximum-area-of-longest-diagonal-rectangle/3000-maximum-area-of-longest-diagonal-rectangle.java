@@ -1,6 +1,6 @@
 class Solution {
     public int areaOfMaxDiagonal(int[][] dimensions) {
-        double maxDiagonal = 0;
+       double maxDiagonal = 0;
         int maxArea = 0;
 
         for (int[] rect : dimensions) {
@@ -19,3 +19,4 @@ class Solution {
         return maxArea;
     }
 }
+ 
