@@ -45,11 +45,11 @@ class Solution {
         }
         if(left!=null){
             curr.next=left;
-            left=left.next;
+            
         }
         if(right!=null){
             curr.next=right;
-            right=right.next;
+            
         }
         return dummy.next;
     }
