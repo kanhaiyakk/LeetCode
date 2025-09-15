@@ -1,6 +1,6 @@
 class Solution {
     public int canBeTypedWords(String text, String brokenLetters) {
-         boolean[] broken = new boolean[26];
+        boolean[] broken = new boolean[26];
         for (char c : brokenLetters.toCharArray()) {
             broken[c - 'a'] = true;
         }
@@ -20,7 +20,6 @@ class Solution {
                 count++;
             }
         }
-
         return count;
     }
 }
