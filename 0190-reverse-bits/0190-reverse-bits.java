@@ -1,9 +1,13 @@
-public class Solution {
-    // you need treat n as an unsigned value
+class Solution {
     public int reverseBits(int n) {
-        String s=String.format("%32s",Integer.toBinaryString(n)).replace(' ','0');
-        String reverse= new StringBuilder(s).reverse().toString();
-        int result=(int)Long.parseLong(reverse,2);
-        return result; 
+        int result = 0;
+        
+        for (int i = 0; i < 32; i++) {
+            result <<= 1;          
+            result |= (n & 1);     
+            n >>>= 1;              
+        }
+        
+        return result;
     }
 }
