@@ -1,27 +1,23 @@
 class Solution {
     public int maxVowels(String s, int k) {
-        
-        int count=0,maxCount=0;
-        for(int i=0;i<k;i++){
-            if(isVowel(s.charAt(i))){
-                count++;
+        int l=0,r=0,max=0;
+        String vowels="aeiou";
+        int count=0;
+        while(r<s.length()){
+            char ch=s.charAt(r);
+               if (vowels.indexOf(ch) != -1){
+                    count++;
+                }
+            if(r-l+1==k){
+             
+                max=Math.max(max,count);
+                if (vowels.indexOf(s.charAt(l)) != -1){
+                    count--;
+                }
+                l++;
             }
+            r++;
         }
-        maxCount=count;
-        for(int i=k;i<s.length();i++){
-            if(isVowel(s.charAt(i))){
-                count++;
-            }
-            if(isVowel(s.charAt(i-k))){
-                count--;
-            }
-
-            maxCount=Math.max(maxCount,count);
-
-        }
-        return maxCount;
-    }
-    public static boolean isVowel(char c){
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        return max;
     }
 }
