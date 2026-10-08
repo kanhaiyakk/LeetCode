@@ -3,9 +3,9 @@ class Solution {
         int min=prices[0];
         int maxProfit=0;
         for(int num: prices){
-            min=Math.min(num,min);
-            int profit=num-min;
-            maxProfit=Math.max(profit,maxProfit);
+            min=Math.min(min,num);
+            int currProfit=num-min;
+            maxProfit=Math.max(maxProfit, currProfit);
         }
         return maxProfit;
     }
